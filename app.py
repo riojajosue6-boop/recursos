@@ -182,17 +182,23 @@ HTML_FRONTEND = """
     function cargarReproductor(id, elemento) {
         var contenedor = document.getElementById('box-' + id);
         
-        // Endpoint oficial gratuito que no requiere tokens para cargar los streams
+        // 🚨 PASO DE MONETAG (PREPARADO):
+        // Aquí es donde colocaremos tu script oficial de Monetag. 
+        // El sistema interceptará el primer clic del usuario para que la ganancia vaya a tu cuenta.
+        console.log("Interceptando clic para Monetag en película: " + id);
+
+        // Endpoint oficial optimizado con políticas de referencia para evitar bloqueos
         var urlEmbed = "https://vidsrc.to/embed/movie/" + id;
         
-        // Inyectamos el reproductor nativo directamente sin recargar la página web
-        contenedor.innerHTML = '<iframe src="' + urlEmbed + '" allowfullscreen></iframe>';
+        // Inyectamos el reproductor forzando los permisos de navegación correctos
+        contenedor.innerHTML = '<iframe src="' + urlEmbed + '" referrerpolicy="origin" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
         contenedor.style.display = 'block';
-        elemento.style.display = 'none'; // Oculta el botón para centrar la atención en el video
+        elemento.style.display = 'none'; // Oculta el botón para limpiar la pantalla
     }
 
     function ejecutarBusqueda() {
-        alert("Estructura de búsqueda lista. En el siguiente paso la conectaremos al inventario global.");
+        // Dejamos la función estática por ahora, tal cual el diseño base pulcro.
+        alert("Diseño de búsqueda verificado. Listos para el siguiente paso cuando tú lo ordenes.");
     }
 </script>
 
