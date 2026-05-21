@@ -43,7 +43,7 @@ RECURSOS_BASE = [
         "titulo": "50 Ganchos Virales TikTok",
         "descripcion": "Manual en PDF con copys persuasivos listos para enganchar tráfico en 3 segundos.",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
-        "enlace_recurso": "https://pdfobject.com/pdf/sample.pdf" # Enlace a un PDF demo de prueba rápido
+        "enlace_recurso": "https://pdfobject.com/pdf/sample.pdf"
     }
 ]
 
@@ -120,10 +120,37 @@ HTML_FRONTEND = """
         .video-element {
             width: 100%; border-radius: 4px; border: 1px solid #cbd5e1; background: #000000; outline: none;
         }
-        
-        /* 📖 ESTILO DEL VISOR DE PDF */
-        .pdf-element {
-            width: 100%; height: 300px; border-radius: 4px; border: 1px solid #cbd5e1;
+
+        /* 🔍 INTERFAZ MODAL DE MODO LECTURA PANTALLA COMPLETA */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(15, 23, 42, 0.95); /* Fondo oscuro elegante */
+            z-index: 1000;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px 12px 10px;
+        }
+        .modal-title {
+            color: #ffffff; font-size: 14px; font-weight: 600;
+        }
+        .close-btn {
+            background: #ef4444; color: white; border: none;
+            padding: 6px 14px; border-radius: 4px; font-weight: bold;
+            font-size: 12px; cursor: pointer;
+        }
+        .pdf-fullscreen-view {
+            width: 100%;
+            height: calc(100% - 45px);
+            border: none;
+            border-radius: 6px;
+            background: #ffffff;
         }
     </style>
 </head>
@@ -154,18 +181,25 @@ HTML_FRONTEND = """
                 </div>
                 
                 <div>
-                    <a href="#" class="btn-action" onclick="procesarAccion('{{ item.id }}', '{{ item.categoria }}', '{{ item.enlace_recurso }}'); return false;">
+                    <a href="#" class="btn-action" onclick="procesarAccion('{{ item.id }}', '{{ item.categoria }}', '{{ item.enlace_recurso }}', '{{ item.titulo }}'); return false;">
                         ABRIR CONTENIDO
                     </a>
                     
                     <div id="audio-player-container-{{ item.id }}" class="media-container"></div>
                     <div id="video-player-container-{{ item.id }}" class="media-container"></div>
-                    <div id="pdf-viewer-container-{{ item.id }}" class="media-container"></div>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+</div>
+
+<div id="global-pdf-modal" class="pdf-modal">
+    <div class="modal-header">
+        <div id="modal-pdf-title" class="modal-title">Documento de Estudio</div>
+        <button class="close-btn" onclick="cerrarModoLectura()">✕ CERRAR</button>
+    </div>
+    <iframe id="modal-pdf-frame" class="pdf-fullscreen-view" src=""></iframe>
 </div>
 
 <script>
@@ -184,16 +218,14 @@ HTML_FRONTEND = """
         });
     }
 
-    // 🧠 PROCESADOR MULTIMEDIA COMPLETO
-    function procesarAccion(id, tipo, url) {
+    // PROCESADOR MULTIMEDIA ACTUALIZADO
+    function procesarAccion(id, tipo, url, titulo) {
         console.log("Procesando recurso id: " + id + " de tipo: " + tipo);
         
-        // Cargar contenedores
         var containerAudio = document.getElementById('audio-player-container-' + id);
         var containerVideo = document.getElementById('video-player-container-' + id);
-        var containerPdf = document.getElementById('pdf-viewer-container-' + id);
         
-        // 🎧 REPRODUCIR AUDIO
+        // 🎧 COMPORTAMIENTO AUDIO
         if (tipo === 'audio') {
             if (containerAudio.style.display === 'block') {
                 containerAudio.innerHTML = ''; containerAudio.style.display = 'none'; return;
@@ -201,7 +233,7 @@ HTML_FRONTEND = """
             containerAudio.innerHTML = `<audio controls controlsList="nodownload" style="width: 100%; height: 32px; outline: none;"><source src="${url}" type="audio/mpeg"></audio>`;
             containerAudio.style.display = 'block';
             
-        // 🎬 REPRODUCIR VIDEO
+        // 🎬 COMPORTAMIENTO VIDEO
         } else if (tipo === 'video') {
             if (containerVideo.style.display === 'block') {
                 containerVideo.innerHTML = ''; containerVideo.style.display = 'none'; return;
@@ -209,22 +241,28 @@ HTML_FRONTEND = """
             containerVideo.innerHTML = `<video controls controlsList="nodownload" class="video-element"><source src="${url}" type="video/mp4"></video>`;
             containerVideo.style.display = 'block';
             
-        // 📖 ABRIR LECTOR PDF
+        // 📖 COMPORTAMIENTO PDF: MODO LECTURA PANTALLA COMPLETA SMART
         } else if (tipo === 'pdf') {
-            if (containerPdf.style.display === 'block') {
-                containerPdf.innerHTML = ''; containerPdf.style.display = 'none'; return;
-            }
             
-            // 💰 PASO PUBLICITARIO DE MONETAG LISTO AQUÍ EN EL FUTURO
+            // 💰 AQUÍ ENTRARÁ TU DISPARADOR DE ANUNCIOS DE MONETAG EN EL FUTURO
             
-            // Inyectamos el visor limpio usando las herramientas internas del navegador
-            containerPdf.innerHTML = `<iframe src="${url}" class="pdf-element"></iframe>`;
-            containerPdf.style.display = 'block';
+            // Cargamos dinámicamente los datos en el modal global
+            document.getElementById('modal-pdf-title').innerText = "📖 " + titulo;
+            document.getElementById('modal-pdf-frame').src = url;
             
-        // 📊 COMPORTAMIENTO DE EXCEL (Único enlace que sí se descarga o copia por lógica)
+            // Desplegamos el modal cubriendo la pantalla
+            document.getElementById('global-pdf-modal').style.display = 'block';
+            
+        // 📊 COMPORTAMIENTO EXCEL
         } else if (tipo === 'excel') {
             window.open(url, '_blank');
         }
+    }
+
+    // FUNCIÓN PARA SALIR DEL MODO LECTURA
+    function cerrarModoLectura() {
+        document.getElementById('global-pdf-modal').style.display = 'none';
+        document.getElementById('modal-pdf-frame').src = ''; // Limpia la memoria del navegador
     }
 
     document.addEventListener("DOMContentLoaded", function() {
