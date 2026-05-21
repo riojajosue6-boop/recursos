@@ -44,6 +44,32 @@ RECURSOS_BASE = [
         "descripcion": "Manual en PDF con copys persuasivos listos para enganchar tráfico en 3 segundos.",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
         "enlace_recurso": "https://pdfobject.com/pdf/sample.pdf"
+    },
+    {
+        "id": "pdf_02",  # Su ID único para la categoría PDF
+        "categoria": "pdf",
+        "badge": "📖 GUÍA TEXTO",
+        "titulo": "COMO_VENDER_CUANDO_NADIE_ESTA_COMPRANDO_2",
+        "descripcion": "Si últimamente lo único que escuchas es
+                        que la gente no está comprando porque no
+                        hay forma de hacerlo cuando el mundo está
+                        parado entonces debes replantearte
+                        inmediatamente la situación. Como
+                        emprendedores o líderes de proyectos
+                        debemos tomar estos retos con pasión para
+                        tratar de generar nuevos ángulos de
+                        negocios.
+
+                        Esta guía te servirá como un primer paso
+                        para redireccionar los pasos que deberás
+                        dar y justamente es lo que necesitamos en
+                        este momento, un modelo que ayude a
+                        nuestra mente a entender cómo abordar la
+                        situación.",
+        "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
+        
+        # 🎯 NOTA LA DIFERENCIA: Este enlace termina en /preview para activar el modo lectura
+        "enlace_recurso": "https://drive.google.com/file/d/16TB1Z4UyxhYUeAAkJ0UCh4THHLPYzkOI/view?usp=drive_link/preview"
     }
 ]
 
