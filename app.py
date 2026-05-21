@@ -99,21 +99,21 @@ HTML_FRONTEND = """
         /* TARJETA COMPACTA DE OFICINA */
         .card {
             background: #ffffff; border-radius: 6px; border: 1px solid #e2e8f0;
-            display: flex; flex-direction: row; overflow: hidden; height: 105px;
+            display: flex; flex-direction: row; overflow: hidden; min-height: 110px; height: auto;
         }
-        .card-img { width: 95px; height: 105px; object-fit: cover; border-right: 1px solid #e2e8f0; }
+        .card-img { width: 95px; min-height: 110px; object-fit: cover; border-right: 1px solid #e2e8f0; }
         .card-body { padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-width: 0; }
         .badge {
             font-size: 9px; font-weight: bold; color: #475569;
             background: #f1f5f9; padding: 2px 6px; border-radius: 3px; align-self: flex-start;
         }
         .card-title { font-size: 13.5px; font-weight: 600; color: #0f172a; margin: 4px 0 2px 0; }
-        .card-text { font-size: 11px; color: #627185; line-height: 1.3; margin-bottom: 4px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+        .card-text { font-size: 11px; color: #627185; line-height: 1.3; margin-bottom: 8px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
         
         .btn-action {
             display: block; text-align: center; background: #1e293b;
-            color: #ffffff; text-decoration: none; padding: 6px 0;
-            border-radius: 4px; font-weight: 600; font-size: 11px;
+            color: #ffffff; text-decoration: none; padding: 7px 0;
+            border-radius: 4px; font-weight: 600; font-size: 11px; margin-bottom: 2px;
         }
     </style>
 </head>
@@ -142,10 +142,13 @@ HTML_FRONTEND = """
                     <div class="card-title">{{ item.titulo }}</div>
                     <div class="card-text">{{ item.descripcion }}</div>
                 </div>
-                <a href="#" class="btn-action" onclick="procesarAccion('{{ item.id }}', '{{ item.categoria }}', '{{ item.enlace_recurso }}'); return false;">
-                <div id="audio-player-container-{{ item.id }}" style="display: none; margin-top: 10px;"></div>
-                    ABRIR CONTENIDO
-                </a>
+                
+                <div>
+                    <a href="#" class="btn-action" onclick="procesarAccion('{{ item.id }}', '{{ item.categoria }}', '{{ item.enlace_recurso }}'); return false;">
+                        ABRIR CONTENIDO
+                    </a>
+                    <div id="audio-player-container-{{ item.id }}" style="display: none; margin-top: 8px;"></div>
+                </div>
             </div>
         </div>
         {% endfor %}
@@ -153,14 +156,12 @@ HTML_FRONTEND = """
 </div>
 
 <script>
-    // 🧠 LÓGICA DE FILTRADO EN TIEMPO REAL (Frente Limpio)
+    // 🧠 LÓGICA DE FILTRADO EN TIEMPO REAL
     function filtrarCategoria(categoria, botonActivo) {
-        // Cambiar estado visual de los botones
         let botones = document.querySelectorAll('.tab-btn');
         botones.forEach(btn => btn.classList.remove('active'));
-        botonActivo.classList.add('active');
+        botonActivo.add ? botonActivo.classList.add('active') : botonActivo.classList.add('active');
 
-        // Filtrar tarjetas
         let tarjetas = document.querySelectorAll('.resource-item');
         tarjetas.forEach(tarjeta => {
             if (tarjeta.getAttribute('data-category') === categoria) {
@@ -171,23 +172,19 @@ HTML_FRONTEND = """
         });
     }
 
-   // FUNCIÓN INTERCEPTORA MULTIMEDIA
+    // FUNCIÓN INTERCEPTORA MULTIMEDIA
     function procesarAccion(id, tipo, url) {
         console.log("Procesando recurso id: " + id + " de tipo: " + tipo);
         
         if (tipo === 'audio') {
             var contenedor = document.getElementById('audio-player-container-' + id);
             
-            // Si el reproductor ya está abierto, lo cerramos para pausar
             if (contenedor.style.display === 'block') {
                 contenedor.innerHTML = '';
                 contenedor.style.display = 'none';
                 return;
             }
             
-            // 💰 AQUÍ COBRAREMOS CON MONETAG EN EL FUTURO ANTES DE PINTAR EL REPRODUCIR
-            
-            // Inyectamos una barra de audio nativa, limpia y estilizada de oficina
             contenedor.innerHTML = `
                 <audio controls controlsList="nodownload" style="width: 100%; height: 32px; outline: none;">
                     <source src="${url}" type="audio/mpeg">
@@ -197,10 +194,16 @@ HTML_FRONTEND = """
             contenedor.style.display = 'block';
             
         } else {
-            // Para las demás categorías (Excel, Video, PDF) mantenemos la alerta temporal
             alert("Pestañas operativas. En el próximo paso programaremos el formato: " + tipo.toUpperCase());
         }
     }
+
+    // FILTRADO INICIAL AL CARGAR LA PÁGINA
+    document.addEventListener("DOMContentLoaded", function() {
+        let primerBoton = document.querySelector('.tab-btn');
+        filtrarCategoria('excel', primerBoton);
+    });
+</script>
 
 </body>
 </html>
