@@ -43,7 +43,7 @@ RECURSOS_BASE = [
         "titulo": "50 Ganchos Virales TikTok",
         "descripcion": "Manual en PDF con copys persuasivos listos para enganchar tráfico en 3 segundos.",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
-        "enlace_recurso": "https://arxiv.org/pdf/quant-ph/0410100.pdf"
+        "enlace_recurso": "https://pdfobject.com/pdf/sample.pdf" # Enlace a un PDF demo de prueba rápido
     }
 ]
 
@@ -112,18 +112,18 @@ HTML_FRONTEND = """
             border-radius: 4px; font-weight: 600; font-size: 11px; margin-bottom: 2px;
         }
         
-        /* Contenedores para reproductores internos */
         .media-container {
             display: none;
             margin-top: 8px;
             width: 100%;
         }
         .video-element {
-            width: 100%;
-            border-radius: 4px;
-            border: 1px solid #cbd5e1;
-            background: #000000;
-            outline: none;
+            width: 100%; border-radius: 4px; border: 1px solid #cbd5e1; background: #000000; outline: none;
+        }
+        
+        /* 📖 ESTILO DEL VISOR DE PDF */
+        .pdf-element {
+            width: 100%; height: 300px; border-radius: 4px; border: 1px solid #cbd5e1;
         }
     </style>
 </head>
@@ -160,6 +160,7 @@ HTML_FRONTEND = """
                     
                     <div id="audio-player-container-{{ item.id }}" class="media-container"></div>
                     <div id="video-player-container-{{ item.id }}" class="media-container"></div>
+                    <div id="pdf-viewer-container-{{ item.id }}" class="media-container"></div>
                 </div>
             </div>
         </div>
@@ -183,46 +184,46 @@ HTML_FRONTEND = """
         });
     }
 
+    // 🧠 PROCESADOR MULTIMEDIA COMPLETO
     function procesarAccion(id, tipo, url) {
         console.log("Procesando recurso id: " + id + " de tipo: " + tipo);
         
-        // 🎧 COMPORTAMIENTO DE AUDIO
+        // Cargar contenedores
+        var containerAudio = document.getElementById('audio-player-container-' + id);
+        var containerVideo = document.getElementById('video-player-container-' + id);
+        var containerPdf = document.getElementById('pdf-viewer-container-' + id);
+        
+        // 🎧 REPRODUCIR AUDIO
         if (tipo === 'audio') {
-            var contenedor = document.getElementById('audio-player-container-' + id);
-            if (contenedor.style.display === 'block') {
-                contenedor.innerHTML = '';
-                contenedor.style.display = 'none';
-                return;
+            if (containerAudio.style.display === 'block') {
+                containerAudio.innerHTML = ''; containerAudio.style.display = 'none'; return;
             }
-            contenedor.innerHTML = `
-                <audio controls controlsList="nodownload" style="width: 100%; height: 32px; outline: none;">
-                    <source src="${url}" type="audio/mpeg">
-                </audio>
-            `;
-            contenedor.style.display = 'block';
+            containerAudio.innerHTML = `<audio controls controlsList="nodownload" style="width: 100%; height: 32px; outline: none;"><source src="${url}" type="audio/mpeg"></audio>`;
+            containerAudio.style.display = 'block';
             
-        // 🎬 COMPORTAMIENTO DE VIDEO
+        // 🎬 REPRODUCIR VIDEO
         } else if (tipo === 'video') {
-            var contenedorVideo = document.getElementById('video-player-container-' + id);
-            if (contenedorVideo.style.display === 'block') {
-                contenedorVideo.innerHTML = '';
-                contenedorVideo.style.display = 'none';
-                return;
+            if (containerVideo.style.display === 'block') {
+                containerVideo.innerHTML = ''; containerVideo.style.display = 'none'; return;
+            }
+            containerVideo.innerHTML = `<video controls controlsList="nodownload" class="video-element"><source src="${url}" type="video/mp4"></video>`;
+            containerVideo.style.display = 'block';
+            
+        // 📖 ABRIR LECTOR PDF
+        } else if (tipo === 'pdf') {
+            if (containerPdf.style.display === 'block') {
+                containerPdf.innerHTML = ''; containerPdf.style.display = 'none'; return;
             }
             
-            // 💰 PASO PUBLICITARIO MONETAG (PREPARADO AQUÍ PARA EL FUTURO)
+            // 💰 PASO PUBLICITARIO DE MONETAG LISTO AQUÍ EN EL FUTURO
             
-            // Inyectamos un reproductor de video nativo que bloquea la descarga directa
-            contenedorVideo.innerHTML = `
-                <video controls controlsList="nodownload" class="video-element">
-                    <source src="${url}" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
-            `;
-            contenedorVideo.style.display = 'block';
+            // Inyectamos el visor limpio usando las herramientas internas del navegador
+            containerPdf.innerHTML = `<iframe src="${url}" class="pdf-element"></iframe>`;
+            containerPdf.style.display = 'block';
             
-        } else {
-            alert("Pestañas operativas. En el próximo paso programaremos el formato: " + tipo.toUpperCase());
+        // 📊 COMPORTAMIENTO DE EXCEL (Único enlace que sí se descarga o copia por lógica)
+        } else if (tipo === 'excel') {
+            window.open(url, '_blank');
         }
     }
 
