@@ -143,6 +143,7 @@ HTML_FRONTEND = """
                     <div class="card-text">{{ item.descripcion }}</div>
                 </div>
                 <a href="#" class="btn-action" onclick="procesarAccion('{{ item.id }}', '{{ item.categoria }}', '{{ item.enlace_recurso }}'); return false;">
+                <div id="audio-player-container-{{ item.id }}" style="display: none; margin-top: 10px;"></div>
                     ABRIR CONTENIDO
                 </a>
             </div>
@@ -170,18 +171,36 @@ HTML_FRONTEND = """
         });
     }
 
-    // FUNCIÓN INTERCEPTORA BASE
+   // FUNCIÓN INTERCEPTORA MULTIMEDIA
     function procesarAccion(id, tipo, url) {
         console.log("Procesando recurso id: " + id + " de tipo: " + tipo);
-        alert("Pestañas operativas. En el siguiente paso programaremos el código específico para reproducir este tipo de formato: " + tipo.toUpperCase());
+        
+        if (tipo === 'audio') {
+            var contenedor = document.getElementById('audio-player-container-' + id);
+            
+            // Si el reproductor ya está abierto, lo cerramos para pausar
+            if (contenedor.style.display === 'block') {
+                contenedor.innerHTML = '';
+                contenedor.style.display = 'none';
+                return;
+            }
+            
+            // 💰 AQUÍ COBRAREMOS CON MONETAG EN EL FUTURO ANTES DE PINTAR EL REPRODUCIR
+            
+            // Inyectamos una barra de audio nativa, limpia y estilizada de oficina
+            contenedor.innerHTML = `
+                <audio controls controlsList="nodownload" style="width: 100%; height: 32px; outline: none;">
+                    <source src="${url}" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            `;
+            contenedor.style.display = 'block';
+            
+        } else {
+            // Para las demás categorías (Excel, Video, PDF) mantenemos la alerta temporal
+            alert("Pestañas operativas. En el próximo paso programaremos el formato: " + tipo.toUpperCase());
+        }
     }
-
-    // Inicializar mostrando solo la primera categoría (Excel) al cargar la página
-    document.addEventListener("DOMContentLoaded", function() {
-        let primerBoton = document.querySelector('.tab-btn');
-        filtrarCategoria('excel', primerBoton);
-    });
-</script>
 
 </body>
 </html>
