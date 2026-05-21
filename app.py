@@ -3,7 +3,7 @@ from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-# BANCO DE DATOS MULTIMEDIA (Clasificado por Categorías de Oficina)
+# BANCO DE DATOS MULTIMEDIA EVOLUCIONADO (Soporta archivos únicos y Cursos por Módulos)
 RECURSOS_BASE = [
     # 1. CATEGORÍA: EXCEL
     {
@@ -13,7 +13,10 @@ RECURSOS_BASE = [
         "titulo": "Control Financiero Pro",
         "descripcion": "Gestión de ingresos, egresos y balances con cuadros dinámicos automatizados.",
         "icono": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=80",
-        "enlace_recurso": "https://docs.google.com/spreadsheets/d/1u6Vb2S3XbEEX87RjX647b0H_M8X4X_X8/copy"
+        # Al tener un solo elemento en la lista, se comporta como archivo único directo
+        "archivos": [
+            {"titulo": "Plantilla Control Financiero Pro", "tipo": "excel", "url": "https://docs.google.com/spreadsheets/d/1u6Vb2S3XbEEX87RjX647b0H_M8X4X_X8/copy"}
+        ]
     },
     # 2. CATEGORÍA: AUDIO
     {
@@ -21,9 +24,14 @@ RECURSOS_BASE = [
         "categoria": "audio",
         "badge": "🎧 AUDIOLIBRO",
         "titulo": "El Hombre Más Rico de Babilonia",
-        "descripcion": "Lección de audio sobre las leyes del oro. Escucha directa desde la aplicación.",
+        "descripcion": "Audiolibro completo organizado por capítulos para dominar las leyes del oro y la riqueza.",
         "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
-        "enlace_recurso": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        # EJEMPLO DE AUDIO MULTI-MÓDULO (Capítulos individuales)
+        "archivos": [
+            {"titulo": "Capítulo 1: El hombre que deseaba oro", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
+            {"titulo": "Capítulo 2: El hombre más rico de Babilonia", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
+            {"titulo": "Capítulo 3: Las siete maneras de llenar una bolsa vacía", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"}
+        ]
     },
     # 3. CATEGORÍA: VIDEO
     {
@@ -33,9 +41,11 @@ RECURSOS_BASE = [
         "titulo": "Estrategia de Ventas Hotmart",
         "descripcion": "Masterclass ejecutiva para ajustar embudos de venta orgánica de alta conversión.",
         "icono": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&auto=format&fit=crop&q=80",
-        "enlace_recurso": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+        "archivos": [
+            {"titulo": "Clase Única: Embudo Orgánico Pro", "tipo": "video", "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"}
+        ]
     },
-    # 4. CATEGORÍA: PDF
+    # 4. CATEGORÍA: PDF (Tu súper curso de 8 módulos o más)
     {
         "id": "pdf_01",
         "categoria": "pdf",
@@ -43,16 +53,40 @@ RECURSOS_BASE = [
         "titulo": "50 Ganchos Virales TikTok",
         "descripcion": "Manual en PDF con copys persuasivos listos para enganchar tráfico en 3 segundos.",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
-        "enlace_recurso": "https://pdfobject.com/pdf/sample.pdf"
+        "archivos": [
+            {"titulo": "Manual de Ganchos Persuasivos", "tipo": "pdf", "url": "https://pdfobject.com/pdf/sample.pdf"}
+        ]
     },
     {
         "id": "pdf_02",
         "categoria": "pdf",
-        "badge": "📖 GUÍA TEXTO",
-        "titulo": "Cómo Vender Cuando Nadie Está Comprando",
-        "descripcion": "Si últimamente lo único que escuchas es que la gente no está comprando porque no hay forma de hacerlo cuando el mundo está parado entonces debes replantearte inmediatamente la situación. Como emprendedores o líderes de proyectos debemos tomar estos retos con pasión para tratar de generar nuevos ángulos de negocios. Esta guía te servirá como un primer paso para redireccionar los pasos que deberás dar y justamente es lo que necesitamos en este momento, un modelo que ayude a nuestra mente a entender cómo abordar la situación.",
+        "badge": "🎓 ACADEMIA COMPLETA",
+        "titulo": "Programa: Cómo Vender Cuando Nadie Está Comprando",
+        "descripcion": "Accede a los módulos oficiales y guías estratégicas de este entrenamiento para hackear mercados difíciles y vender infoproductos con éxito.",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
-        "enlace_recurso": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/EBOOK_COMO_VENDER_CUANDO_NADIE_ESTA_COMPRANDO_2_.pdf"
+        # 🎯 AQUÍ ESTÁ LA SOLUCIÓN REVOLUCIONARIA PARA TUS MÓDULOS MULTIMEDIA:
+        "archivos": [
+            {
+                "titulo": "Módulo 1: Redireccionar la mente ante la crisis", 
+                "tipo": "pdf", 
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/EBOOK_COMO_VENDER_CUANDO_NADIE_ESTA_COMPRANDO_2_.pdf"
+            },
+            {
+                "titulo": "Módulo 2: Encontrando el nuevo ángulo de negocio", 
+                "tipo": "pdf", 
+                "url": "https://pdfobject.com/pdf/sample.pdf"
+            },
+            {
+                "titulo": "Módulo 3: Video Complementario - Embudo de Rompimiento", 
+                "tipo": "video", 
+                "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            },
+            {
+                "titulo": "Módulo 4: Calculadora de Metas y Comisiones", 
+                "tipo": "excel", 
+                "url": "https://docs.google.com/spreadsheets/d/1u6Vb2S3XbEEX87RjX647b0H_M8X4X_X8/copy"
+            }
+        ]
     }
 ]
 
@@ -114,7 +148,6 @@ HTML_FRONTEND = """
         }
         .card-title { font-size: 13.5px; font-weight: 600; color: #0f172a; margin: 4px 0 4px 0; }
         
-        /* CORRECCIÓN DE LEGIBILIDAD EXCELENTE */
         .card-text { 
             font-size: 11px; 
             color: #627185; 
@@ -130,7 +163,7 @@ HTML_FRONTEND = """
             border-radius: 4px; font-weight: 600; font-size: 11px; margin-bottom: 2px;
         }
 
-        /* MODAL MULTIMEDIA UNIFICADO */
+        /* MODAL MULTIMEDIA UNIFICADO INTELIGENTE */
         .global-modal {
             display: none;
             position: fixed;
@@ -146,9 +179,16 @@ HTML_FRONTEND = """
             align-items: center;
             padding: 5px 10px 12px 10px;
         }
+        .modal-header-left {
+            display: flex; gap: 8px; align-items: center; max-width: 70%;
+        }
         .modal-title {
             color: #ffffff; font-size: 14px; font-weight: 600;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70%;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .btn-back-menu {
+            display: none; background: #475569; color: white; border: none;
+            padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 11px; cursor: pointer;
         }
         .close-btn {
             background: #ef4444; color: white; border: none;
@@ -164,18 +204,32 @@ HTML_FRONTEND = """
             align-items: center;
             box-sizing: border-box;
         }
-        .fullscreen-frame {
-            width: 100%; height: 100%; border: none; border-radius: 6px; background: #ffffff;
+        
+        /* DISEÑO DE LA LISTA DE MÓDULOS (ÍNDICE) */
+        .modules-menu-container {
+            width: 100%; max-width: 380px; height: 95%;
+            display: flex; flex-direction: column; gap: 10px;
+            overflow-y: auto; padding: 10px 0;
         }
-        .fullscreen-video {
-            width: 100%; max-height: 85%; border-radius: 6px; outline: none; background: #000000;
+        .module-list-btn {
+            background: #1e293b; border: 1px solid #334155; border-radius: 6px;
+            color: #ffffff; padding: 14px 16px; text-align: left; font-size: 12.5px;
+            font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            transition: background 0.2s;
         }
+        .module-list-btn:hover { background: #27374d; }
+        .module-list-btn .icon-format { font-size: 14px; background: #334155; padding: 3px 6px; border-radius: 4px; }
+
+        /* REPRODUCTORES */
+        .fullscreen-frame { width: 100%; height: 100%; border: none; border-radius: 6px; background: #ffffff; }
+        .fullscreen-video { width: 100%; max-height: 85%; border-radius: 6px; outline: none; background: #000000; }
+        
         .audio-modal-card {
             background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 30px 20px;
             width: 90%; max-width: 360px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .audio-modal-card .audio-icon { font-size: 45px; margin-bottom: 15px; }
-        .audio-modal-card .audio-title { color: #ffffff; font-size: 16px; font-weight: bold; margin-bottom: 20px; }
+        .audio-modal-card .audio-title { color: #ffffff; font-size: 15px; font-weight: bold; margin-bottom: 20px; }
         
         .excel-modal-card {
             background: #ffffff; border-radius: 12px; padding: 35px 25px;
@@ -186,9 +240,8 @@ HTML_FRONTEND = """
         .excel-modal-card .excel-desc { color: #64748b; font-size: 12px; margin-bottom: 25px; line-height: 1.4; }
         .btn-excel-download {
             display: inline-block; background: #10b981; color: white; text-decoration: none;
-            padding: 12px 24px; border-radius: 6px; font-weight: bold; font-size: 13px; transition: background 0.2s;
+            padding: 12px 24px; border-radius: 6px; font-weight: bold; font-size: 13px;
         }
-        .btn-excel-download:hover { background: #059669; }
     </style>
 </head>
 <body>
@@ -218,7 +271,7 @@ HTML_FRONTEND = """
                 </div>
                 
                 <div>
-                    <a href="#" class="btn-action" onclick="abrirRecursoGlobal('{{ item.categoria }}', '{{ item.enlace_recurso }}', '{{ item.titulo }}', '{{ item.descripcion }}'); return false;">
+                    <a href="#" class="btn-action" onclick="analizarRecurso('{{ item.titulo }}', '{{ item.descripcion }}', {{ item.archivos|tojson|safe }}); return false;">
                         ABRIR CONTENIDO
                     </a>
                 </div>
@@ -230,7 +283,10 @@ HTML_FRONTEND = """
 
 <div id="recurso-modal-global" class="global-modal">
     <div class="modal-header">
-        <div id="modal-global-title" class="modal-title">Visualizador de Recurso</div>
+        <div class="modal-header-left">
+            <button id="btn-modal-back" class="btn-back-menu" onclick="regresarAlIndice()">⬅ MENÚ</button>
+            <div id="modal-global-title" class="modal-title">Visualizador</div>
+        </div>
         <button class="close-btn" onclick="cerrarRecursoGlobal()">✕ CERRAR</button>
     </div>
     <div id="modal-global-body" class="modal-body-content">
@@ -238,6 +294,11 @@ HTML_FRONTEND = """
 </div>
 
 <script>
+    // Variables temporales de control para el módulo académico
+    let cacheTituloCurso = "";
+    let cacheDescripcionCurso = "";
+    let cacheArchivosCurso = [];
+
     function filtrarCategoria(categoria, botonActivo) {
         let botones = document.querySelectorAll('.tab-btn');
         botones.forEach(btn => btn.classList.remove('active'));
@@ -253,18 +314,71 @@ HTML_FRONTEND = """
         });
     }
 
-    // MANEJADOR MULTIMEDIA INTEGRADO EN VENTANA ÚNICA
-    function abrirRecursoGlobal(tipo, url, titulo, descripcion) {
+    // ANALIZADOR DE RUTA: Detecta si es archivo único o curso multi-módulos
+    function analizarRecurso(tituloCurso, descripcionCurso, listaArchivos) {
+        cacheTituloCurso = tituloCurso;
+        cacheDescripcionCurso = descripcionCurso;
+        cacheArchivosCurso = listaArchivos;
+
+        if (listaArchivos.length === 1) {
+            // Archivo Único: Abrir directo de golpe como antes
+            document.getElementById('btn-modal-back').style.display = 'none';
+            renderizarVisualizadorElemento(listaArchivos[0].tipo, listaArchivos[0].url, listaArchivos[0].titulo, descripcionCurso);
+        } else {
+            // Multi-Módulo: Construir e inyectar el menú de índice interactivo
+            document.getElementById('btn-modal-back').style.display = 'none';
+            construirIndiceInteractivo();
+        }
+        document.getElementById('recurso-modal-global').style.display = 'block';
+    }
+
+    // CONSTRUCTOR DEL ÍNDICE INTERACTIVO INTERNO
+    function construirIndiceInteractivo() {
+        document.getElementById('modal-global-title').innerText = cacheTituloCurso;
+        var bodyModal = document.getElementById('modal-global-body');
+        
+        let htmlMenu = `<div class="modules-menu-container">`;
+        
+        cacheArchivosCurso.forEach((archivo, index) => {
+            let prefijoIcono = "📄 PDF";
+            if(archivo.tipo === 'video') prefijoIcono = "🎬 VIDEO";
+            if(archivo.tipo === 'audio') prefijoIcono = "🎧 AUDIO";
+            if(archivo.tipo === 'excel') prefijoIcono = "📊 EXCEL";
+
+            htmlMenu += `
+                <button class="module-list-btn" onclick="abrirElementoDesdeIndice(${index})">
+                    <span>${archivo.titulo}</span>
+                    <span class="icon-format">${prefijoIcono}</span>
+                </button>`;
+        });
+        
+        htmlMenu += `</div>`;
+        bodyModal.innerHTML = htmlMenu;
+    }
+
+    // ACTIVADOR DE LECCIÓN DESDE EL MENÚ INTERNO
+    function abrirElementoDesdeIndice(index) {
+        let archivoSeleccionado = cacheArchivosCurso[index];
+        // Activamos el botón para regresar al índice interno del curso
+        document.getElementById('btn-modal-back').style.display = 'block';
+        renderizarVisualizadorElemento(archivoSeleccionado.tipo, archivoSeleccionado.url, archivoSeleccionado.titulo, cacheDescripcionCurso);
+    }
+
+    function regresarAlIndice() {
+        document.getElementById('btn-modal-back').style.display = 'none';
+        construirIndiceInteractivo();
+    }
+
+    // NÚCLEO RENDERIZADOR MULTIMEDIA
+    function renderizarVisualizadorElemento(tipo, url, titulo, descripcion) {
         var bodyModal = document.getElementById('modal-global-body');
         document.getElementById('modal-global-title').innerText = titulo;
-        bodyModal.innerHTML = ''; // Reset preventivo
+        bodyModal.innerHTML = '';
         
         if (tipo === 'pdf') {
             bodyModal.innerHTML = `<iframe class="fullscreen-frame" src="${url}"></iframe>`;
-            
         } else if (tipo === 'video') {
             bodyModal.innerHTML = `<video controls controlsList="nodownload" autoplay class="fullscreen-video"><source src="${url}" type="video/mp4"></video>`;
-            
         } else if (tipo === 'audio') {
             bodyModal.innerHTML = `
                 <div class="audio-modal-card">
@@ -272,7 +386,6 @@ HTML_FRONTEND = """
                     <div class="audio-title">${titulo}</div>
                     <audio controls controlsList="nodownload" autoplay style="width: 100%; outline: none;"><source src="${url}" type="audio/mpeg"></audio>
                 </div>`;
-                
         } else if (tipo === 'excel') {
             bodyModal.innerHTML = `
                 <div class="excel-modal-card">
@@ -282,13 +395,12 @@ HTML_FRONTEND = """
                     <a href="${url}" target="_blank" class="btn-excel-download">📥 DESCARGAR PLANTILLA EXCEL</a>
                 </div>`;
         }
-        
-        document.getElementById('recurso-modal-global').style.display = 'block';
     }
 
     function cerrarRecursoGlobal() {
         document.getElementById('recurso-modal-global').style.display = 'none';
-        document.getElementById('modal-global-body').innerHTML = ''; // Corta descargas, audios y videos en segundo plano
+        document.getElementById('modal-global-body').innerHTML = ''; // Limpieza de memoria
+        document.getElementById('btn-modal-back').style.display = 'none';
     }
 
     document.addEventListener("DOMContentLoaded", function() {
