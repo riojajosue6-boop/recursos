@@ -30,8 +30,30 @@ RECURSOS_BASE = [
             {"titulo": "Consejos para superar depresion", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Consejos+para+superar+depresion.mp3"}
             ]
     },
-    
-
+            {
+        "id": "au_02",
+        "categoria": "audio",
+        "badge": "🎧 AUDIOLIBRO",
+        "titulo": "Los Hombres son de Marte y las Mujeres de Venus",
+        "descripcion": "«Los hombres son de Marte, las mujeres de Venus» de John Gray es un clásico de autoayuda que explica cómo las diferencias fundamentales en la comunicación, necesidades emocionales y formas de lidiar con el estrés generan malentendidos en la pareja, ofreciendo herramientas para construir relaciones más sanas y comprensivas.",
+        "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
+        "archivos": 
+            [
+            {"titulo": "Los Hombres son de Marte y las Mujeres de Venus", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Los_Hombres_son_de_Marte_y_las_Mujeres_de_Venus_John_Gray_phD.mp3"}
+            ]
+    },
+     {
+        "id": "au_03",
+        "categoria": "audio",
+        "badge": "🎧 AUDIOLIBRO",
+        "titulo": "Millonario inteligentes",
+        "descripcion": "« es una guía práctica de educación financiera y desarrollo personal. Su enfoque principal es enseñarte cómo cambiar tu mentalidad hacia el dinero, eliminar creencias limitantes y aplicar estrategias para alcanzar la libertad financiera.",
+        "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
+        "archivos": 
+            [
+            {"titulo": "Millonario inteligentes", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Millonario+inteligente.mp3"}
+            ]
+    },
 #    {
 #        "id": "au_02",
 #        "categoria": "audio",
