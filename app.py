@@ -31,21 +31,20 @@ RECURSOS_BASE = [
             ]
     },
     
-   """
-    {
-        "id": "au_02",
-        "categoria": "audio",
-        "badge": "🎧 AUDIOLIBRO",
-        "titulo": "El Hombre Más Rico de Babilonia",
-        "descripcion": "Audiolibro completo organizado por capítulos para dominar las leyes del oro y la riqueza.",
-        "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
-        "archivos": [
-            {"titulo": "Capítulo 1: El hombre que deseaba oro", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
-            {"titulo": "Capítulo 2: El hombre más rico de Babilonia", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
-            {"titulo": "Capítulo 3: Las siete maneras de llenar una bolsa vacía", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"}
-        ]
-    },
-    """
+
+#    {
+#        "id": "au_02",
+#        "categoria": "audio",
+#        "badge": "🎧 AUDIOLIBRO",
+#        "titulo": "El Hombre Más Rico de Babilonia",
+#        "descripcion": "Audiolibro completo organizado por capítulos para dominar las leyes del oro y la riqueza.",
+#        "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
+#        "archivos": [
+#            {"titulo": "Capítulo 1: El hombre que deseaba oro", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
+#            {"titulo": "Capítulo 2: El hombre más rico de Babilonia", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
+#            {"titulo": "Capítulo 3: Las siete maneras de llenar una bolsa vacía", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"}
+#     ]
+ 
     
     # 3. CATEGORÍA: VIDEO
     {
