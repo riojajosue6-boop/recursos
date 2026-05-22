@@ -54,6 +54,18 @@ RECURSOS_BASE = [
             {"titulo": "Millonario inteligentes", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Millonario+inteligente.mp3"}
             ]
     },
+         {
+        "id": "au_04",
+        "categoria": "audio",
+        "badge": "🎧 AUDIOLIBRO",
+        "titulo": "Cómo construir la autodisciplina",
+        "descripcion": "¿Cómo construir la autodisciplina en tu vida? ¿Cómo resistir a las recompensas a corto plazo con el fin de alcanzar tus metas a largo plazo? Este libro es la respuesta a esas preguntas. ",
+        "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
+        "archivos": 
+            [
+            {"titulo": "Cómo construir la autodisciplina", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/C%C3%B3mo+Construir+la+Autodisciplina.mp3"}
+            ]
+    },
 #    {
 #        "id": "au_02",
 #        "categoria": "audio",
