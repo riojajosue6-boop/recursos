@@ -27,7 +27,7 @@ RECURSOS_BASE = [
         "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
         "archivos": 
             [
-            {"titulo": "Consejos para superar depresion", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Consejos+para+superar+depresion.mp3"},
+            {"titulo": "Consejos para superar depresion", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Consejos+para+superar+depresion.mp3"}
             ]
     },
     
