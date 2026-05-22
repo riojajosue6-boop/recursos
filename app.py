@@ -97,41 +97,67 @@ RECURSOS_BASE = [
         "id": "pdf_01",
         "categoria": "pdf",
         "badge": "📖 GUÍA TEXTO",
-        "titulo": "50 Ganchos Virales TikTok",
-        "descripcion": "Manual en PDF con copys persuasivos listos para enganchar tráfico en 3 segundos.",
+        "titulo": "Como Vender Cuando Nadie esta Comprando",
+        "descripcion": "Esta guía te servirá como un primer paso para redireccionar los pasos que deberás dar y justamente es lo que necesitamos en este momento, un modelo que ayude a nuestra mente a entender cómo abordar la situación.",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
         "archivos": [
-            {"titulo": "Manual de Ganchos Persuasivos", "tipo": "pdf", "url": "https://pdfobject.com/pdf/sample.pdf"}
+            {"titulo": "Como Vender Cuando Nadie esta Comprando", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/EBOOK_COMO_VENDER_CUANDO_NADIE_ESTA_COMPRANDO_2_.pdf"}
         ]
     },
     {
         "id": "pdf_02",
         "categoria": "pdf",
-        "badge": "🎓 ACADEMIA COMPLETA",
-        "titulo": "Programa: Cómo Vender Cuando Nadie Está Comprando",
-        "descripcion": "Accede a los módulos oficiales y guías estratégicas de este entrenamiento para hackear mercados difíciles y vender infoproductos con éxito.",
+        "badge": "🎓 Curso Aprende Ingles",
+        "titulo": "Ingles Sin Barreras Manual",
+        "descripcion": "Accede a los módulos oficiales y guías estratégicas de este entrenamiento, El que sabe dos idiomas vale por dos personas",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
         "archivos": [
             {
-                "titulo": "Módulo 1: Redireccionar la mente ante la crisis", 
+                "titulo": "Módulo 1", 
                 "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/EBOOK_COMO_VENDER_CUANDO_NADIE_ESTA_COMPRANDO_2_.pdf"
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+01-By.Priale+(1).pdf"
             },
-            {
-                "titulo": "Módulo 2: Encontrando el nuevo ángulo de negocio", 
+                        {
+                "titulo": "Módulo 2", 
                 "tipo": "pdf", 
-                "url": "https://pdfobject.com/pdf/sample.pdf"
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+02-By.Priale.pdf"
             },
-            {
-                "titulo": "Módulo 3: Video Complementario - Embudo de Rompimiento", 
-                "tipo": "video", 
-                "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                        {
+                "titulo": "Módulo 3", 
+                "tipo": "pdf", 
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+03-By.Priale+(1).pdf"
             },
-            {
-                "titulo": "Módulo 4: Calculadora de Metas y Comisiones", 
-                "tipo": "excel", 
-                "url": "https://docs.google.com/spreadsheets/d/1u6Vb2S3XbEEX87RjX647b0H_M8X4X_X8/copy"
-            }
+                        {
+                "titulo": "Módulo 4", 
+                "tipo": "pdf", 
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+04-By.Priale.pdf"
+            },
+                        {
+                "titulo": "Módulo 5", 
+                "tipo": "pdf", 
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+05-By.Priale.pdf"
+            },
+                        {
+                "titulo": "Módulo 6", 
+                "tipo": "pdf", 
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+06-By.Priale.pdf"
+            },
+                        {
+                "titulo": "Módulo 7", 
+                "tipo": "pdf", 
+                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+07-By.Priale.pdf"
+            },
+
+            #{
+            #    "titulo": "Módulo 3: Video Complementario - Embudo de Rompimiento", 
+            #    "tipo": "video", 
+            #    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            #},
+            #{
+            #    "titulo": "Módulo 4: Calculadora de Metas y Comisiones", 
+            #    "tipo": "excel", 
+            #    "url": "https://docs.google.com/spreadsheets/d/1u6Vb2S3XbEEX87RjX647b0H_M8X4X_X8/copy"
+            #}
         ]
     }
 ]
