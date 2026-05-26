@@ -147,17 +147,6 @@ RECURSOS_BASE = [
                 "tipo": "pdf", 
                 "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+07-By.Priale.pdf"
             },
-
-            #{
-            #    "titulo": "Módulo 3: Video Complementario - Embudo de Rompimiento", 
-            #    "tipo": "video", 
-            #    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-            #},
-            #{
-            #    "titulo": "Módulo 4: Calculadora de Metas y Comisiones", 
-            #    "tipo": "excel", 
-            #    "url": "https://docs.google.com/spreadsheets/d/1u6Vb2S3XbEEX87RjX647b0H_M8X4X_X8/copy"
-            #}
         ]
     }
 ]
@@ -166,7 +155,6 @@ HTML_FRONTEND = """
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script>(function(s){s.dataset.zone='11062026',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
     <meta name="monetag" content="b6437955edabbcb46ba78e6a83c5819b">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -306,6 +294,15 @@ HTML_FRONTEND = """
 </head>
 <body>
 
+<div id="welcome-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.96); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; padding: 20px; box-sizing: border-box;">
+    <h1 style="font-size: 2rem; margin-bottom: 10px; font-weight: bold; color: #facc15;">¡Bienvenido a Flow Recursos Pro! ⚡</h1>
+    <p style="font-size: 1rem; color: #94a3b8; max-width: 360px; margin: 0 0 30px 0; line-height: 1.5;">Panel Corporativo de Capacitación Digital. Accede de manera gratuita a tus plantillas, audiolibros y videoclases.</p>
+    
+    <button id="btn-entrar-recursos" style="background: #2563eb; color: white; font-size: 1.1rem; font-weight: bold; padding: 14px 35px; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); transition: transform 0.2s; outline: none;">
+        🚀 Entrar al Panel Pro
+    </button>
+</div>
+
 <div class="app-container">
     <div class="header">
         <h1>Flow Recursos Pro</h1>
@@ -353,29 +350,25 @@ HTML_FRONTEND = """
 </div>
 
 <script>
-    // Guardamos la base de datos de manera nativa en JavaScript sin romper etiquetas HTML
     const baseRecursos = {{ recursos|tojson|safe }};
     
     let cacheTituloCurso = "";
     let cacheDescripcionCurso = "";
     let cacheArchivosCurso = [];
 
-    // CONTROL INTELIGENTE CON MEMORIA PERMANENTE POR PESTAÑA
+    // ACCIÓN DEL BOTÓN DE BIENVENIDA (Asegura un clic de entrada al 100%)
+    document.getElementById('btn-entrar-recursos').addEventListener('click', function() {
+        const smartLinkRecursos = "https://omg10.com/4/11061922";
+        
+        // Abre el anuncio garantizado en segundo plano
+        window.open(smartLinkRecursos, '_blank');
+        
+        // Oculta la pantalla y libera la aplicación limpia
+        document.getElementById('welcome-overlay').style.display = 'none';
+    });
+
+    // SISTEMA ORIGINAL DE FILTRADO (Limpio y sin anuncios adicionales interrumpiendo)
     function filtrarCategoria(categoria, botonActivo) {
-        // Enlace directo de Monetag
-        const smartLinkRecursos = "https://omg10.com/4/11061922"; 
-
-        // LEER MEMORIA PERMANENTE: Validamos si ya se cobró esta pestaña antes
-        const yaCobrada = localStorage.getItem('pestaña_permanente_' + categoria);
-
-        if (!yaCobrada) {
-            // Si está limpia en el historial, lanzamos el cobro seguro
-            window.open(smartLinkRecursos, '_blank');
-            // Guardamos la marca definitiva en el disco del navegador
-            localStorage.setItem('pestaña_permanente_' + categoria, 'true');
-        }
-
-        // --- SISTEMA ORIGINAL DE FILTRADO (Mantenido intacto) ---
         let botones = document.querySelectorAll('.tab-btn');
         botones.forEach(btn => btn.classList.remove('active'));
         botonActivo.classList.add('active');
@@ -390,7 +383,6 @@ HTML_FRONTEND = """
         });
     }
 
-    // El botón llama aquí usando el ID de forma ultra segura
     function prepararRecurso(idRecurso) {
         const item = baseRecursos.find(r => r.id === idRecurso);
         if (!item) return;
@@ -474,13 +466,8 @@ HTML_FRONTEND = """
         document.getElementById('btn-modal-back').style.display = 'none';
     }
 
-    // BLOQUEO EN EL ARRANQUE PARA LA PESTAÑA INICIAL (Excel)
     document.addEventListener("DOMContentLoaded", function() {
         let primerBoton = document.querySelector('.tab-btn');
-        
-        // Bloqueamos permanentemente Excel al iniciar para que no moleste al cargar la web
-        localStorage.setItem('pestaña_permanente_excel', 'true');
-        
         filtrarCategoria('excel', primerBoton);
     });
 </script>
