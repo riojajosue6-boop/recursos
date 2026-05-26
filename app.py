@@ -306,20 +306,15 @@ HTML_FRONTEND = """
 </div>
 
 <div class="app-container">
-    <div class="header">
-        <div style="text-align: center; margin-bottom: 15px;">
-        <a href="https://mundogrupos.com" style="display: inline-flex; align-items: center; background: #2563eb; color: white; text-decoration: none; font-size: 11px; font-weight: bold; padding: 8px 16px; border-radius: 4px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);">
-            👋Puedes conectar con mas grupos de tu interes en el Directorio de Grupos
+
+<div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; width: 100%;">
+        <a href="https://mundogrupos.com" style="display: flex; align-items: center; justify-content: center; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; text-decoration: none; font-size: 11px; font-weight: 600; padding: 10px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); transition: all 0.2s;">
+            👋 Conecta con gente de tu interes Directorio de Grupos
         </a>
-    </div>
-    <div class="header">
-        <div style="text-align: center; margin-bottom: 15px;">
-        <a href="https://emojis.mundogrupos.com" style="display: inline-flex; align-items: center; background: #2563eb; color: white; text-decoration: none; font-size: 11px; font-weight: bold; padding: 8px 16px; border-radius: 4px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);">
-            📈Puedes Usar la herramienta de Emojis para tus publicaciones en redes sociales
+        <a href="https://emojis.mundogrupos.com" style="display: flex; align-items: center; justify-content: center; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; text-decoration: none; font-size: 11px; font-weight: 600; padding: 10px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); transition: all 0.2s;">
+            📝 Usa la Herramienta de Emojis para tus Publicaciones en redes sociales
         </a>
-        <h1>Flow Recursos Pro</h1>
-        <p class="subtitle">Panel Corporativo de Capacitación Digital</p>
-    </div>
+    </div>>
 
     <div class="tabs-menu">
         <button class="tab-btn active" onclick="filtrarCategoria('excel', this)">Excel</button>
