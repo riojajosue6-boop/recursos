@@ -157,6 +157,7 @@ HTML_FRONTEND = """
 <head>
     <meta name="monetag" content="b6437955edabbcb46ba78e6a83c5819b">
     <script>(function(s){s.dataset.zone='11062322',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script> window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-86RXCNDRDY');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Flow Recursos Pro</title>
