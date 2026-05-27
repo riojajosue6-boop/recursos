@@ -18,68 +18,50 @@ RECURSOS_BASE = [
         ]
     },
     # 2. CATEGORÍA: AUDIO
-        {
+    {
         "id": "au_01",
         "categoria": "audio",
         "badge": "🎧 AUDIOLIBRO",
         "titulo": "Consejos para superar depresion",
         "descripcion": "Audiolibro completo metodo para estimular el cerebro asi mejorar el aprendizaje salud y alcanzar el éxito.",
         "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
-        "archivos": 
-            [
+        "archivos": [
             {"titulo": "Consejos para superar depresion", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Consejos+para+superar+depresion.mp3"}
-            ]
+        ]
     },
-            {
+    {
         "id": "au_02",
         "categoria": "audio",
         "badge": "🎧 AUDIOLIBRO",
         "titulo": "Los Hombres son de Marte y las Mujeres de Venus",
         "descripcion": "«Los hombres son de Marte, las mujeres de Venus» de John Gray es un clásico de autoayuda que explica cómo las diferencias fundamentales en la comunicación, necesidades emocionales y formas de lidiar con el estrés generan malentendidos en la pareja, ofreciendo herramientas para construir relaciones más sanas y comprensivas.",
         "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
-        "archivos": 
-            [
+        "archivos": [
             {"titulo": "Los Hombres son de Marte y las Mujeres de Venus", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Los_Hombres_son_de_Marte_y_las_Mujeres_de_Venus_John_Gray_phD.mp3"}
-            ]
+        ]
     },
-     {
+    {
         "id": "au_03",
         "categoria": "audio",
         "badge": "🎧 AUDIOLIBRO",
         "titulo": "Millonario inteligentes",
         "descripcion": "« es una guía práctica de educación financiera y desarrollo personal. Su enfoque principal es enseñarte cómo cambiar tu mentalidad hacia el dinero, eliminar creencias limitantes y aplicar estrategias para alcanzar la libertad financiera.",
         "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
-        "archivos": 
-            [
+        "archivos": [
             {"titulo": "Millonario inteligentes", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/Millonario+inteligente.mp3"}
-            ]
+        ]
     },
-         {
+    {
         "id": "au_04",
         "categoria": "audio",
         "badge": "🎧 AUDIOLIBRO",
         "titulo": "Cómo construir la autodisciplina",
         "descripcion": "¿Cómo construir la autodisciplina en tu vida? ¿Cómo resistir a las recompensas a corto plazo con el fin de alcanzar tus metas a largo plazo? Este libro es la respuesta a esas preguntas. ",
         "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
-        "archivos": 
-            [
+        "archivos": [
             {"titulo": "Cómo construir la autodisciplina", "tipo": "audio", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-AudioLibros/C%C3%B3mo+Construir+la+Autodisciplina.mp3"}
-            ]
+        ]
     },
-#    {
-#        "id": "au_02",
-#        "categoria": "audio",
-#        "badge": "🎧 AUDIOLIBRO",
-#        "titulo": "El Hombre Más Rico de Babilonia",
-#        "descripcion": "Audiolibro completo organizado por capítulos para dominar las leyes del oro y la riqueza.",
-#        "icono": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80",
-#        "archivos": [
-#            {"titulo": "Capítulo 1: El hombre que deseaba oro", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
-#            {"titulo": "Capítulo 2: El hombre más rico de Babilonia", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
-#            {"titulo": "Capítulo 3: Las siete maneras de llenar una bolsa vacía", "tipo": "audio", "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"}
-#     ]
- 
-    
     # 3. CATEGORÍA: VIDEO
     {
         "id": "vi_01",
@@ -112,41 +94,13 @@ RECURSOS_BASE = [
         "descripcion": "Accede a los módulos oficiales y guías estratégicas de este entrenamiento, El que sabe dos idiomas vale por dos personas",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
         "archivos": [
-            {
-                "titulo": "Módulo 1", 
-                "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+01-By.Priale+(1).pdf"
-            },
-                        {
-                "titulo": "Módulo 2", 
-                "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+02-By.Priale.pdf"
-            },
-                        {
-                "titulo": "Módulo 3", 
-                "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+03-By.Priale+(1).pdf"
-            },
-                        {
-                "titulo": "Módulo 4", 
-                "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+04-By.Priale.pdf"
-            },
-                        {
-                "titulo": "Módulo 5", 
-                "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+05-By.Priale.pdf"
-            },
-                        {
-                "titulo": "Módulo 6", 
-                "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+06-By.Priale.pdf"
-            },
-                        {
-                "titulo": "Módulo 7", 
-                "tipo": "pdf", 
-                "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+07-By.Priale.pdf"
-            },
+            {"titulo": "Módulo 1", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+01-By.Priale+(1).pdf"},
+            {"titulo": "Módulo 2", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+02-By.Priale.pdf"},
+            {"titulo": "Módulo 3", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+03-By.Priale+(1).pdf"},
+            {"titulo": "Módulo 4", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+04-By.Priale.pdf"},
+            {"titulo": "Módulo 5", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+05-By.Priale.pdf"},
+            {"titulo": "Módulo 6", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+06-By.Priale.pdf"},
+            {"titulo": "Módulo 7", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/Curso+aprende+Ingles/Ingles+Sin+Barreras+Manual+07-By.Priale.pdf"}
         ]
     }
 ]
@@ -174,18 +128,67 @@ HTML_FRONTEND = """
             background: #ffffff; border-radius: 8px; padding: 20px;
             box-sizing: border-box; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
+            display: flex; flex-direction: column; gap: 0;
         }
-        .header {
-            text-align: center; margin-bottom: 20px;
-            border-bottom: 2px solid #f1f5f9; padding-bottom: 12px;
-        }
-        h1 { font-size: 19px; color: #1e293b; margin: 0; font-weight: 700; }
-        .subtitle { font-size: 11px; color: #64748b; margin: 4px 0 0 0; }
         
+        /* CABECERA ESTILIZADA FORZADA EN LA PARTE SUPERIOR */
+        .header-box {
+            background: #ffffff;
+            text-align: center;
+            padding: 10px 10px 18px 10px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #f1f5f9;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .header-box h1 { 
+            font-size: 21px; 
+            color: #1e293b; 
+            margin: 0; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+        }
+        .header-box .subtitle { 
+            font-size: 11.5px; 
+            color: #64748b; 
+            margin: 5px 0 0 0; 
+            font-weight: 500;
+        }
+        
+        /* CONTENEDOR DE BOTONES DE INTERCONEXIÓN */
+        .interlinks-container {
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+            margin-bottom: 20px; 
+            width: 100%;
+        }
+        .link-btn {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: #f1f5f9; 
+            color: #334155; 
+            border: 1px solid #e2e8f0; 
+            text-decoration: none; 
+            font-size: 11px; 
+            font-weight: 600; 
+            padding: 10px 12px; 
+            border-radius: 6px; 
+            transition: background 0.2s; 
+            text-align: center;
+            line-height: 1.3;
+        }
+        .link-btn:hover {
+            background: #e2e8f0;
+        }
+        
+        /* MENÚ DE PESTAÑAS */
         .tabs-menu {
             display: flex; justify-content: space-between;
             background: #f1f5f9; border-radius: 6px;
             padding: 4px; margin-bottom: 20px; gap: 4px;
+            width: 100%; box-sizing: border-box;
         }
         .tab-btn {
             flex: 1; border: none; background: transparent;
@@ -198,11 +201,12 @@ HTML_FRONTEND = """
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         
-        .resources-grid { display: flex; flex-direction: column; gap: 12px; }
+        .resources-grid { display: flex; flex-direction: column; gap: 12px; width: 100%; }
         
         .card {
             background: #ffffff; border-radius: 6px; border: 1px solid #e2e8f0;
             display: flex; flex-direction: row; overflow: hidden; min-height: 110px; height: auto;
+            width: 100%; box-sizing: border-box;
         }
         .card-img { width: 95px; min-height: 110px; object-fit: cover; border-right: 1px solid #e2e8f0; }
         .card-body { padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-width: 0; }
@@ -220,10 +224,10 @@ HTML_FRONTEND = """
             display: block; text-align: center; background: #1e293b;
             color: #ffffff; text-decoration: none; padding: 7px 0;
             border-radius: 4px; font-weight: 600; font-size: 11px; margin-bottom: 2px;
-            cursor: pointer;
+            cursor: pointer; width: 100%; border: none;
         }
 
-        /* MODAL MULTIMEDIA UNIFICADO */
+        /* MODAL MULTIMEDIA */
         .global-modal {
             display: none;
             position: fixed;
@@ -257,7 +261,6 @@ HTML_FRONTEND = """
             display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box;
         }
         
-        /* DISEÑO MENÚ DE MÓDULOS */
         .modules-menu-container {
             width: 100%; max-width: 380px; height: 95%;
             display: flex; flex-direction: column; gap: 10px; overflow-y: auto; padding: 10px 0;
@@ -267,10 +270,7 @@ HTML_FRONTEND = """
             color: #ffffff; padding: 14px 16px; text-align: left; font-size: 12.5px;
             font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
         }
-        .module-list-btn:hover { background: #27374d; }
-        .module-list-btn .icon-format { font-size: 10px; background: #334155; padding: 3px 6px; border-radius: 4px; font-weight: bold; }
-
-        /* REPRODUCTORES */
+        
         .fullscreen-frame { width: 100%; height: 100%; border: none; border-radius: 6px; background: #ffffff; }
         .fullscreen-video { width: 100%; max-height: 85%; border-radius: 6px; outline: none; background: #000000; }
         
@@ -307,17 +307,17 @@ HTML_FRONTEND = """
 
 <div class="app-container">
 
-    <div class="header">
+    <div class="header-box">
         <h1>Flow Recursos Pro</h1>
-        <p class="subtitle">Panel Corporativo de Capacitación Digital</p>
+        <div class="subtitle">Panel Corporativo de Capacitación Digital</div>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; width: 100%;">
-        <a href="https://mundogrupos.com" style="display: flex; align-items: center; justify-content: center; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; text-decoration: none; font-size: 11px; font-weight: 600; padding: 10px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); transition: all 0.2s; text-align: center;">
-            👋 Conecta con gente de tu interes Directorio de Grupos
+    <div class="interlinks-container">
+        <a href="https://mundogrupos.com" class="link-btn">
+            👋 Conecta con gente de tu interes<br><b>Directorio de Grupos</b>
         </a>
-        <a href="https://emojis.mundogrupos.com" style="display: flex; align-items: center; justify-content: center; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; text-decoration: none; font-size: 11px; font-weight: 600; padding: 10px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); transition: all 0.2s; text-align: center;">
-            📝 Usa la Herramienta de Emojis para tus Publicaciones en redes sociales
+        <a href="https://emojis.mundogrupos.com" class="link-btn">
+            📝 Usa la Herramienta de Emojis para tus<br><b>Publicaciones en redes sociales</b>
         </a>
     </div>
 
@@ -338,9 +338,8 @@ HTML_FRONTEND = """
                     <div class="card-title">{{ item.titulo }}</div>
                     <div class="card-text">{{ item.descripcion }}</div>
                 </div>
-                
                 <div>
-                    <button class="btn-action" style="width:100%; border:none;" onclick="prepararRecurso('{{ item.id }}')">
+                    <button class="btn-action" onclick="prepararRecurso('{{ item.id }}')">
                         ABRIR CONTENIDO
                     </button>
                 </div>
@@ -368,18 +367,12 @@ HTML_FRONTEND = """
     let cacheDescripcionCurso = "";
     let cacheArchivosCurso = [];
 
-    // ACCIÓN DEL BOTÓN DE BIENVENIDA (Asegura un clic de entrada al 100%)
     document.getElementById('btn-entrar-recursos').addEventListener('click', function() {
         const smartLinkRecursos = "https://omg10.com/4/11061922";
-        
-        // Abre el anuncio garantizado en segundo plano
         window.open(smartLinkRecursos, '_blank');
-        
-        // Oculta la pantalla y libera la aplicación limpia
         document.getElementById('welcome-overlay').style.display = 'none';
     });
 
-    // SISTEMA ORIGINAL DE FILTRADO (Limpio y sin anuncios adicionales interrumpiendo)
     function filtrarCategoria(categoria, botonActivo) {
         let botones = document.querySelectorAll('.tab-btn');
         botones.forEach(btn => btn.classList.remove('active'));
