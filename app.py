@@ -111,7 +111,7 @@ RECURSOS_BASE = [
         "descripcion": "En este volumen Usted Nació Rico Bob Proctor lo ha vuelto a conseguir esta vez llevándole a usted paso a paso al sorprendente descubrimiento de que el éxito no siempre consiste en hacerse con algo que no tiene, sino más bien es sólo "echar mano" de las piezas que ya tiene y recolocarlas",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
         "archivos": [
-            {"titulo": "Usted Naci{o Rico", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/010-Tu+Naciste+Rico+-+Bob+Proctor.pdf"}
+            {"titulo": "Usted Nació Rico", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/010-Tu+Naciste+Rico+-+Bob+Proctor.pdf"}
         ]
     },
     {
@@ -130,7 +130,7 @@ RECURSOS_BASE = [
         "categoria": "pdf",
         "badge": "📖 GUÍA TEXTO",
         "titulo": "Consejos Para Triunfar Como Emprendedor - Fernando Jáuregui _ Lourdes Carmona ",
-        "descripcion": "En el terreno de la realización personal, la independencia financiera y la riqueza del espíritu, más allá de lo que se puede medir en dinero, Piense y hágase rico es uno de los libros más válidos de todos los tiempos.",
+        "descripcion": "No pretendamos que las cosas cambien si siempre hacemos lo mismo. La crisis es la mejor bendición que puede sucederles a personas y países porque la crisis trae progresos. La creatividad nace de la angustia como el día nace de la noche oscura.",
         "icono": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&auto=format&fit=crop&q=80",
         "archivos": [
             {"titulo": "CÓMO CONVERTIR CON ÉXITO TU SUEÑO EN UNA EMPRESA", "tipo": "pdf", "url": "https://f005.backblazeb2.com/file/Material-recursos/Material-PDF/1001+Consejos+Para+Triunfar+Como+Emprendedor+-+Fernando+J%C3%A1uregui+_+Lourdes+Carmona+(1).pdf"}
